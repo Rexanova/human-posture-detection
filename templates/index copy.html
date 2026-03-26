@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posture Detection</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #333;
+      }
+      #posture-label {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Posture Detection</h1>
+
+    <label>
+      <input type="checkbox" id="toggle-boxes" checked /> Show Bounding Boxes
+    </label>
+
+    <br /><br />
+    <img src="{{ url_for('video_feed') }}" width="720" />
+
+    <h2>Detected Posture:</h2>
+    <p id="posture-label">Detecting...</p>
+
+    <script>
+      function updatePosture() {
+        fetch("/get_label")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("posture-label").textContent = data.posture;
+          })
+          .catch((error) => console.error("Error fetching label:", error));
+      }
+
+      document
+        .getElementById("toggle-boxes")
+        .addEventListener("change", function () {
+          fetch("/toggle_boxes", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ showBoxes: this.checked }),
+          });
+        });
+
+      setInterval(updatePosture, 50);
+    </script>
+  </body>
+</html>

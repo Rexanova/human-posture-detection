@@ -1,0 +1,5 @@
+train: C:/Users/ezdeh/Downloads/posture_final/dataset/images/train
+val: C:/Users/ezdeh/Downloads/posture_final/dataset/images/val
+
+nc: 2
+names: ['Good Posture', 'Bad Posture']
