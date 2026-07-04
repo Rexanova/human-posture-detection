@@ -19,8 +19,6 @@ Developed as part of a Final Year Diploma Capstone Project, this application use
 ---
 
 ## Output & Demo
-
-<img width="743" height="372" alt="image" src="https://github.com/user-attachments/assets/e08edecb-5cef-4b5b-b9d4-634b3184375b" />
 <img width="743" height="372" alt="image" src="https://github.com/user-attachments/assets/f0244cf3-35c4-4dee-9a9d-8c929b04791d" />
 <img width="743" height="372" alt="image" src="https://github.com/user-attachments/assets/9ee4e7a1-54c3-4b8f-9c50-2cafc0061fde" />
 <img width="743" height="372" alt="image" src="https://github.com/user-attachments/assets/517e5761-3815-43ad-a814-db2e948a462d" />
